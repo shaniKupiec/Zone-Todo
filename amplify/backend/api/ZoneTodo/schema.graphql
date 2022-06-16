@@ -1,0 +1,14 @@
+type Todo {
+  id: ID!
+  title: String!
+  subtitle: String!
+  doneAt: AWSTimestamp
+}
+
+type User @model @auth(rules: [{allow: public, operations: [create, read, update]}]) {
+  id: ID!
+  name: String!
+  phone: AWSPhone!
+  email: AWSEmail!
+  todos: [Todo]
+}
