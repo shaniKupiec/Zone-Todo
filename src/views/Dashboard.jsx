@@ -8,7 +8,7 @@ export function Dashboard(props) {
   <div class="dashboard">
     <header class="dashboard__head">
       <div class="dashboard__head__block"></div>
-      <img src="../assets/imgs/user-img.png" alt="" class="dashboard__head__user-img" />
+      <img src="../assets/images/user-img.png" alt="" class="dashboard__head__user-img" />
       <div class="dashboard__head__welcome">Welcome {{ userName }}</div>
     </header>
     <router-view class="dashboard__main" :todos="todos"></router-view>

@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import illus1 from "../assets/imgs/illustration1.png";
+import illus1 from "../assets/images/illustration1.png";
 import { useFormRegister } from "../hooks/useFormRegister.js";
 
 export function Login(props) {
@@ -39,7 +39,7 @@ const handleSubmit = () => {
   /* <template>
   <section className="login">
     <div className="login__title">welcome back</div>
-    <img src="../assets/imgs/illustration1.png" alt="" className="login__illustration" />
+    <img src="../assets/images/illustration1.png" alt="" className="login__illustration" />
     <form @submit.prevent="login" className="login__form">
       <input type="text" name="" id="" v-model="fullName" placeholder="Enter Your Full Name" required />
       <input type="text" name="" id="" v-model="password" placeholder="Enter Your Password" required />

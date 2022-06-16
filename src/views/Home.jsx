@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import illus2 from '../assets/imgs/illustration2.png'
+import illus2 from '../assets/images/illustration2.png'
 
 export function Home(props) {
   const navigate = useNavigate();

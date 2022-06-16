@@ -1,4 +1,4 @@
-import shape from '../assets/imgs/shape.png'
+import shape from '../assets/images/shape.png'
 
 export function AppHeader(props) {
     return (
