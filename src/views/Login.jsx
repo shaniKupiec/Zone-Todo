@@ -1,8 +1,19 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import illus1 from "../assets/images/illustration1.png";
 import { useFormRegister } from "../hooks/useFormRegister.js";
+import { memo } from "react";
+import {Link} from "react-router-dom";
 
-export function Login(props) {
+export const Login = memo((props) => {
+  const [isFieldsOk, setIsFieldsOk] = useState(false);
+
+  const checkValidations = useCallback(({ fullName, password }) => {
+    if (fullName.trim().split(" ").length >= 2 && password !== "") {
+      setIsFieldsOk({ isFieldsOk: true });
+    }
+    // console.log('isFieldsOk',isFieldsOk)
+  }, []);
+
   const [register] = useFormRegister(
     {
       fullName: "",
@@ -11,13 +22,10 @@ export function Login(props) {
     checkValidations
   );
 
-  const checkValidations = useCallback(async (filterBy) => {
-    console.log('hi');
-}, [])
-
-const handleSubmit = () => {
-  console.log('submit!');
-}
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+    console.log("submit!");
+  };
 
   return (
     <section className="login">
@@ -29,65 +37,8 @@ const handleSubmit = () => {
         <button className="login__form__submit">login</button>
       </form>
       <footer className="login__footer">
-        Don't have Account ?<router-link to="/register">register</router-link>
+        Don't have Account ?<Link to="/register"> register </Link>
       </footer>
     </section>
   );
-}
-
-{
-  /* <template>
-  <section className="login">
-    <div className="login__title">welcome back</div>
-    <img src="../assets/images/illustration1.png" alt="" className="login__illustration" />
-    <form @submit.prevent="login" className="login__form">
-      <input type="text" name="" id="" v-model="fullName" placeholder="Enter Your Full Name" required />
-      <input type="text" name="" id="" v-model="password" placeholder="Enter Your Password" required />
-      <button className="login__form__submit">login</button>
-    </form>
-    <footer className="login__footer">
-      Don't have Account ?
-      <router-link to="/register">register</router-link>
-    </footer>
-  </section>
-</template>
-
-<script lang="ts">
-import { defineComponent, Ref, ref } from "vue";
-import { useRouter } from "vue-router";
-import { useStore } from '../store'
-
-export default defineComponent({
-  setup() {
-    const router = useRouter();
-    const store = useStore();
-
-    const fullName: Ref<string> = ref('')
-    const password: Ref<string> = ref('')
-
-
-    const login = async () => {
-      const userInfo = {
-        fullName: fullName.value,
-        password: password.value,
-      };
-      // const isOkay = false;
-      const isOkay = await store.dispatch({ type: "login", userInfo });
-      console.log("isOkay", isOkay);
-      if (isOkay) router.push(`/dashboard`);
-      else {
-        fullName.value = "";
-        password.value = "";
-        alert("try again");
-      }
-    };
-
-    return {
-      login,
-      fullName,
-      password,
-    };
-  },
 });
-</script> */
-}

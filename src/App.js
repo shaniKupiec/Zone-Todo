@@ -6,6 +6,7 @@ import { Home } from "./views/Home";
 import { Register } from "./views/Register";
 import { Login } from "./views/Login";
 import { Dashboard } from "./views/Dashboard";
+import { TodoEdit } from "./views/TodoEdit"
 
 function App() {
   // const PrivateRoute = (props) => {
@@ -21,6 +22,7 @@ function App() {
         <main className="app__main">
           <Routes>
             {/* <PrivateRoute path="/dashboard" element={<Dashboard />} /> */}
+            <Route path="/editTodo" element={<TodoEdit />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
