@@ -1,0 +1,36 @@
+.register {
+    @include flex(column, space-around);
+    height: 90%;
+    
+    &__title {
+        font-family: poppins-semiBold;
+        font-size: rem(18px);
+        text-transform: capitalize;
+        margin-bottom: rem(16px);
+    }
+    &__description {
+        margin-bottom: rem(40px);
+    }
+
+    &__form {
+        input{
+            @include input();
+            padding-inline-start: rem(25px);
+            margin-bottom: rem(18px);
+            &:last-of-type {
+                margin-bottom: rem(67px);
+            }
+        }
+        &__submit {
+            @include btn();
+            margin-bottom: rem(28px);
+        }
+    }
+
+    &__footer{
+        a{
+            text-transform: capitalize;
+            color: $sClr1
+        }
+    }
+}

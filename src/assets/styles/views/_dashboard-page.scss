@@ -1,0 +1,37 @@
+.dashboard {
+    @include flex(column);
+    height: 100vh;
+    position: relative;
+    
+    &__head {
+        @include flex(column, space-around);
+        // flex-grow: 2;
+        background-color: $pClr1;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        height: 267px;
+
+        &__block{
+            // width: 100vw;
+            // height: 40%;
+        }
+
+        &__user-img {
+            width: 114px;
+
+        }
+        &__welcome {
+            font-family: poppins-semiBold;
+            font-size: rem(18px);
+            color: $pClr4;
+            text-transform: capitalize;
+
+        }
+    }
+
+    &__main{
+        position: absolute;
+        top: calc(267px);
+    }
+}

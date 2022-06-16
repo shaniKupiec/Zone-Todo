@@ -1,0 +1,23 @@
+.home {
+    @include flex(column, space-around);
+    height: 90%;
+
+    &__illustration {
+        width: rem(168px);
+        margin-bottom: rem(90px);
+        padding-inline-start: 7px;
+    }
+    &__title {
+        font-family: poppins-medium;
+        font-size: rem(18px);
+        margin-bottom: rem(28px);
+    }
+    &__description {
+        margin-bottom: rem(65px);
+    }
+    
+    &__start {
+        @include btn();
+        margin-bottom: 5px;
+    }
+}

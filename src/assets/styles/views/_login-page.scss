@@ -1,0 +1,45 @@
+.login {
+    @include flex(column, space-around);
+
+    &__title {
+        font-family: poppins-semiBold;
+        font-size: rem(18px);
+        text-transform: capitalize;
+        margin-bottom: rem(49px);
+    }
+
+    &__illustration {
+        width: rem(168px);
+        margin-bottom: rem(71px);
+        padding-inline-start: 55px;
+    }
+
+    &__form {
+        input {
+            @include input();
+            padding-inline-start: rem(25px);
+            margin-bottom: rem(67px);
+            &:first-of-type {
+                margin-bottom: rem(18px);
+            }
+        }
+        &__submit {
+            @include btn();
+            margin-bottom: rem(28px);
+            
+        }
+    }
+
+    &__footer {
+        a {
+            text-transform: capitalize;
+            color: $sClr1;
+        }
+    }
+}
+
+@media (min-height: 750px) {
+    .login {
+        height: 90%;
+    }
+}

@@ -1,0 +1,25 @@
+// SETUP
+@import 'setup/typography';
+@import 'setup/variables';
+@import 'setup/functions';
+@import 'setup/mixins';
+
+// BASICS
+@import 'basics/base';
+@import 'basics/layout';
+@import 'basics/helpers';
+
+//VIEWS
+@import 'views/home-page';
+@import 'views/register-page';
+@import 'views/login-page';
+@import 'views/dashboard-page';
+
+// COMPONENTS
+@import 'components/app-header';
+@import 'components/task-list';
+@import 'components/task-preview';
+
+.hi{
+    color: red;
+}

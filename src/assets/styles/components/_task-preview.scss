@@ -1,0 +1,28 @@
+.task {
+    @include flex(row, flex-start);
+    gap: 11px;
+    font-family: poppins-extraLight;
+    font-size: rem(14px);
+    padding: 10px;
+
+    &__checkbox {
+        width: 19px;
+        height: 17px;
+        border: 2px solid $pClr1;
+        &.full {
+            background-color: $pClr1;
+        }
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        & > * {
+            width: 100%;
+            display: flex;
+        }
+        &__doneAt {
+            font-size: rem(12px);
+        }
+    }
+}

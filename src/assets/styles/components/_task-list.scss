@@ -1,0 +1,21 @@
+.task-list {
+    background-color: $pClr4;
+    box-shadow: 0px 5px 6px -6px #000000;
+    border-radius: 10px;
+    padding: 20px;
+    max-height: calc(100vh - 315px);
+    overflow: scroll;
+    margin: 30px;
+    &__header {
+        @include flex(row, space-between);
+        width: 80vw;
+        &__title {
+            font-size: rem(18px);
+            font-family: poppins-medium;
+            text-transform: capitalize;
+        }
+        &__add {
+            width: 26px;
+        }
+    }
+}
