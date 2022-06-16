@@ -1,12 +1,12 @@
-// import { Task } from "@/models/task.models";
+// import { Todo } from "@/models/todo.models";
 // import { User } from "@/models/user.models";
 
 // export const userService = {
 //   getToStore,
 //   login,
 //   register,
-//   editTask,
-//   getTask,
+//   editTodo,
+//   getTodo,
 // };
 // const USERS_KEY = "users";
 // const USER_ID_KEY = "logged-in-user-id";
@@ -20,7 +20,7 @@
 //       id: _makeId(),
 //       fullName: "Guest Guest",
 //       password: "Guest Guest",
-//       tasks: [
+//       todos: [
 //         {
 //           id: _makeId(),
 //           title: "Learn options api",
@@ -86,7 +86,7 @@
 
 // function register(userInfo: User): User {
 //   userInfo.id = _makeId();
-//   userInfo.tasks = [];
+//   userInfo.todos = [];
 //   users.push(userInfo);
 //   loggedInUser = userInfo;
 //   _saveToStorage(users, USERS_KEY);
@@ -94,31 +94,31 @@
 //   return userInfo;
 // }
 
-// function editTask(task: Task): Task {
+// function editTodo(todo: Todo): Todo {
 //   if (!loggedInUser) throw "no logged in user";
-//   if (task.id) {
-//     const idx = loggedInUser.tasks.findIndex((t) => t.id === task.id);
-//     if (idx === undefined) throw "no such task";
-//     loggedInUser.tasks[idx] = task;
+//   if (todo.id) {
+//     const idx = loggedInUser.todos.findIndex((t) => t.id === todo.id);
+//     if (idx === undefined) throw "no such todo";
+//     loggedInUser.todos[idx] = todo;
 //   } else {
-//     task.id = _makeId();
-//     loggedInUser.tasks.push(task);
+//     todo.id = _makeId();
+//     loggedInUser.todos.push(todo);
 //   }
 //   _updateUsers();
-//   return task;
+//   return todo;
 // }
 
-// function getTask(taskId: string | null): Task {
+// function getTodo(todoId: string | null): Todo {
 //   if (!loggedInUser) throw "no logged in user";
-//   if (!taskId)
+//   if (!todoId)
 //     return {
 //       title: "",
 //       subtitle: "",
 //       doneAt: null,
 //     };
-//   const task = loggedInUser.tasks.find((t) => t.id === taskId);
-//   if (task) return task;
-//   throw "no such task";
+//   const todo = loggedInUser.todos.find((t) => t.id === todoId);
+//   if (todo) return todo;
+//   throw "no such todo";
 // }
 
 // function _updateUsers() {

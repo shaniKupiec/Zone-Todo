@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import illus1 from '../assets/imgs/illustration2.png'
+import illus2 from '../assets/imgs/illustration2.png'
 
 export function Home(props) {
   const navigate = useNavigate();
@@ -13,14 +13,14 @@ export function Home(props) {
   const demo = useCallback(() => {
     // await store.dispatch({ type: "demo" });
     navigate("/dashboard", { replace: true });
-    // navigate("/dashboard/task", { replace: true });
+    // navigate("/dashboard/todo", { replace: true });
   }, [navigate]);
 
   return (
     <section className="home">
-      <img src={illus1} alt="" className="home__illustration" />
+      <img src={illus2} alt="" className="home__illustration" />
       <div className="home__title">Organize your work and life, finally.</div>
-      <div className="home__description">Become focused, organized, and calm with ToDo. The world’s #1 task manager and to-do list app.</div>
+      <div className="home__description">Become focused, organized, and calm with ToDo. The world’s #1 todo manager and to-do list app.</div>
       <button className="home__start" onClick={start}>
         get started
       </button>

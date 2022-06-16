@@ -1,5 +1,5 @@
 // import { Navigate } from "react-router-dom";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter , Route, Routes } from "react-router-dom";
 import "./assets/styles/Global.scss";
 import { AppHeader } from "./components/AppHeader";
 import { Home } from "./views/Home";
@@ -15,7 +15,7 @@ function App() {
   // };
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div className="app">
         <AppHeader />
         <main className="app__main">
@@ -28,7 +28,7 @@ function App() {
           </Routes>
         </main>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
