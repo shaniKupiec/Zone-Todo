@@ -31,10 +31,10 @@ export const listTodos = /* GraphQL */ `
         doneAt
         userEmail
         createdAt
-        # updatedAt
-        # _version
-        # _deleted
-        # _lastChangedAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
       nextToken
       startedAt

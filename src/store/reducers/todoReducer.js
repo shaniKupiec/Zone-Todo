@@ -1,35 +1,30 @@
-
 const INITIAL_STATE = {
-    todos: [],
-}
+  todos: [],
+};
 
 export function todoReducer(state = INITIAL_STATE, action) {
+  switch (action.type) {
+    case "SET_TODOS":
+      return {
+        todos: action.todos,
+      };
 
-    switch (action.type) {
-        case 'SET_TODOS':
-            return {
-                todos: action.todos
-            }
+    case "ADD_TODO":
+      return {
+        todos: [...state.todos, action.todo],
+      };
 
-        case 'ADD_TODO':
-            return {
-                ...state,
-                todos: [...state.todos, action.todo]
-            }
+    case "UPDATE_TODO":
+      return {
+        todos: state.todos.map((todo) => (todo.id === action.todo.id ? action.todo : todo)),
+      };
 
-        case 'REMOVE_TODO':
-            return {
-                ...state,
-                todos: state.todos.filter(todo => todo._id !== action.todoId)
-            }
+    case "REMOVE_TODO":
+      return {
+        todos: state.todos.filter((todo) => todo.id !== action.todoId),
+      };
 
-        case 'UPDATE_TODO':
-            return {
-                ...state,
-                todos: state.todos.map(todo => todo._id === action.todo._id ? action.todo : todo)
-            }
-
-        default:
-            return state;
-    }
+    default:
+      return state;
+  }
 }

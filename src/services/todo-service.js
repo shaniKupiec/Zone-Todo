@@ -1,5 +1,6 @@
 import { API, graphqlOperation } from "aws-amplify";
 import { listTodos } from "../graphql/queries";
+import { createTodo, updateTodo, deleteTodo } from "../graphql/mutations";
 
 export const todoService = {
   query,
@@ -24,18 +25,18 @@ async function query(loggedInUserEmail) {
   }
 }
 
-async function add(todo) {
+async function add(todoData) {
   try {
-    // await API.graphql(graphqlOperation(createTodo, { input: todo }));
+    await API.graphql({ query: createTodo, variables: { input: todoData } })
   } catch (error) {
     console.log("error add todo", error);
     throw error;
   }
 }
 
-async function update(todo) {
+async function update(todoData) {
   try {
-    // await API.graphql(graphqlOperation(updateTodo, { input: { id: todoId, name: "Updated todo info" } }));
+    await API.graphql({ query: updateTodo, variables: { input: todoData } })
   } catch (error) {
     console.log("error update todo", error);
     throw error;
@@ -44,7 +45,7 @@ async function update(todo) {
 
 async function remove(todoId) {
   try {
-    // await API.graphql(graphqlOperation(deleteTodo, { input: { id: todoId } }));
+    await API.graphql({ query: deleteTodo, variables: { input: { todoId } }});
   } catch (error) {
     console.log("error delete todo", error);
     throw error;
