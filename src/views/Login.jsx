@@ -4,6 +4,7 @@ import { useFormRegister } from "../hooks/useFormRegister.js";
 import { memo } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { login } from "../store/actions/authActions";
 
 export const Login = memo((props) => {
   const [isFieldsOk, setIsFieldsOk] = useState(false);

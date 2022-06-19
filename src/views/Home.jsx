@@ -5,16 +5,14 @@ import illus2 from '../assets/images/illustration2.png'
 export const Home = (props) => {
   const navigate = useNavigate();
 
-  const start = useCallback(() => {
-    // console.log("hi");
-    navigate("/login", { replace: true });
-  }, [navigate]);
+  const start = () => {
+    navigate("/login");
+  };
 
-  const demo = useCallback(() => {
-    // await store.dispatch({ type: "demo" });
-    navigate("/dashboard", { replace: true });
-    // navigate("/dashboard/todo", { replace: true });
-  }, [navigate]);
+  const demo = () => {
+    navigate("/dashboard");
+  };
+
 
   return (
     <section className="home">

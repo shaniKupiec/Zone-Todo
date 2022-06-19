@@ -3,22 +3,35 @@ import { authService } from "../../services/auth-service";
 export function login(user) {
   return async (dispatch) => {
     try {
-      console.log('authAction', user);
+      console.log("authAction", user);
       const userToSave = await authService.login(user);
-      dispatch({ type: "SET_LOGGED_IN_USER", userToSave });
+      dispatch({ type: "SET_LOGGED_IN_USER", user: userToSave });
     } catch (err) {
       console.log("err:", err);
     }
   };
 }
 
-export function register(user) {
+export function registerAction(user) {
   return async (dispatch) => {
     try {
-      const userToSave = await authService.register(user);
-      dispatch({ type: "SET_LOGGED_IN_USER", userToSave });
+      const userForStore = await authService.register(user);
+      console.log("finish registerAction");
+      dispatch({ type: "SET_LOGGED_IN_USER", user: userForStore });
     } catch (err) {
       console.log("err:", err);
+    }
+  };
+}
+
+export function confirmRegister({ username, code }) {
+  return async (dispatch) => {
+    try {
+      await authService.confirmRegister(username, code);
+      console.log("finish confirmRegister");
+    } catch (err) {
+      console.log("err:", err);
+      dispatch({ type: "SET_LOGGED_IN_USER", user: null });
     }
   };
 }
