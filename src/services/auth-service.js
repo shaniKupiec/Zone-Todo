@@ -21,21 +21,21 @@ async function login(username, password) {
   }
 }
 
-async function register(user) {
+async function register(userToSave) {
   try {
-    // const user = {
+    // const userToSave = {
     //   name: "Guest",
     //   password: "1234567JKYh!",
     //   email: "shani.kupiec@gmail.com",
     //   phone: "+972544268251",
     // };
-    const { newUser } = await Auth.signUp({
-      username: user.email,
-      password: user.password,
+    const { user } = await Auth.signUp({
+      username: userToSave.email,
+      password: userToSave.password,
       attributes: {
-        email: user.email,
-        phone_number: user.phone,
-        name: user.name,
+        email: userToSave.email,
+        phone_number: userToSave.phone,
+        name: userToSave.name,
       },
     });
     // const newUser = {
@@ -43,8 +43,8 @@ async function register(user) {
     //   userDataKey: data.userDataKey,
     //   username: data.username,
     // };
-    console.log(newUser);
-    return newUser;
+    console.log(user);
+    return user;
   } catch (error) {
     console.log("error register up:", error);
     throw error;

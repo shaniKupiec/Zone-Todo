@@ -1,8 +1,16 @@
+import { useSelector } from "react-redux";
 import userImg from "../assets/images/user-img.png";
 import { TodoList } from "../components/TodoList";
 
 export const Dashboard = (props) => {
   // <Link to="/register"> register </Link>
+  const { loggedInUser } = useSelector(state => state.authModule)
+  console.log('loggedInUser',loggedInUser)
+
+
+  // console.log('hi',hi)
+  // const { loggedInUser } = useSelector(state => state.userModule)
+
 
   const todos = [
     {
@@ -50,7 +58,7 @@ export const Dashboard = (props) => {
       <header className="dashboard__head">
         <div className="dashboard__head__block"></div>
         <img src={userImg} alt="" className="dashboard__head__user-img" />
-        <div className="dashboard__head__welcome">Welcome {userName}</div>
+        <div className="dashboard__head__welcome">Welcome {loggedInUser.attributes.name}</div>
       </header>
       <main className="dashboard__main">
         <TodoList todos={todos} />
