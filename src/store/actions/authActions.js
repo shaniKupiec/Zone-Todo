@@ -1,13 +1,14 @@
 import { authService } from "../../services/auth-service";
 
-export function login(user) {
+export function login({ username, password }) {
   return async (dispatch) => {
     try {
-      console.log("authAction", user);
-      const userToSave = await authService.login(user);
+      console.log("authAction", username, password);
+      const userToSave = await authService.login(username, password);
       dispatch({ type: "SET_LOGGED_IN_USER", user: userToSave });
-    } catch (err) {
-      console.log("err:", err);
+    } catch (error) {
+      console.log("error:", error);
+      throw error;
     }
   };
 }
@@ -18,8 +19,9 @@ export function registerAction(user) {
       const userForStore = await authService.register(user);
       console.log("finish registerAction");
       dispatch({ type: "SET_LOGGED_IN_USER", user: userForStore });
-    } catch (err) {
-      console.log("err:", err);
+    } catch (error) {
+      console.log("error:", error);
+      throw error;
     }
   };
 }
@@ -29,9 +31,10 @@ export function confirmRegister({ username, code }) {
     try {
       await authService.confirmRegister(username, code);
       console.log("finish confirmRegister");
-    } catch (err) {
-      console.log("err:", err);
+    } catch (error) {
+      console.log("error:", error);
       dispatch({ type: "SET_LOGGED_IN_USER", user: null });
+      throw error;
     }
   };
 }
@@ -41,8 +44,9 @@ export function logout() {
     try {
       await authService.logout();
       dispatch({ type: "SET_LOGGED_IN_USER", user: null });
-    } catch (err) {
-      console.log("err:", err);
+    } catch (error) {
+      console.log("error:", error);
+      throw error;
     }
   };
 }

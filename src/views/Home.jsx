@@ -1,15 +1,24 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import illus2 from '../assets/images/illustration2.png'
+import { useDispatch } from "react-redux";
+import { login } from "../store/actions/authActions";
 
 export const Home = (props) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const start = () => {
     navigate("/login");
   };
 
-  const demo = () => {
+  const demo = async() => {
+    await dispatch(
+      login({
+        username: 'shani.kupiec@gmail.com',
+        password: '1234567JKYh!',
+      })
+    );
     navigate("/dashboard");
   };
 
