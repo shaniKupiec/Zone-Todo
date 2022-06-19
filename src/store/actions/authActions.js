@@ -3,8 +3,9 @@ import { authService } from "../../services/auth-service";
 export function login(user) {
   return async (dispatch) => {
     try {
-      await authService.login(user);
-      dispatch({ type: "SET_LOGGED_IN_USER", user });
+      console.log('authAction', user);
+      const userToSave = await authService.login(user);
+      dispatch({ type: "SET_LOGGED_IN_USER", userToSave });
     } catch (err) {
       console.log("err:", err);
     }
@@ -14,8 +15,8 @@ export function login(user) {
 export function register(user) {
   return async (dispatch) => {
     try {
-      await authService.register(user);
-      dispatch({ type: "SET_LOGGED_IN_USER", user });
+      const userToSave = await authService.register(user);
+      dispatch({ type: "SET_LOGGED_IN_USER", userToSave });
     } catch (err) {
       console.log("err:", err);
     }
