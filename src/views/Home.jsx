@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import illus2 from '../assets/images/illustration2.png'
 import { useDispatch } from "react-redux";
 import { login } from "../store/actions/authActions";
+import { loadTodos } from "../store/actions/todoActions";
 
 export const Home = (props) => {
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ export const Home = (props) => {
         password: '1234567JKYh!',
       })
     );
+    await dispatch(loadTodos('shani.kupiec@gmail.com'))
     navigate("/dashboard");
   };
 

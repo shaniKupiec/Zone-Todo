@@ -1,9 +1,9 @@
 import { todoService } from "../../services/todo-service";
 
-export function loadRobots() {
+export function loadTodos(loggedInUserEmail) {
   return async (dispatch) => {
     try {
-      const todos = await todoService.query();
+      const todos = await todoService.query(loggedInUserEmail);
       dispatch({ type: "SET_TODOS", todos });
     } catch (err) {
       console.log("err:", err);

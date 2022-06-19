@@ -4,6 +4,7 @@ import { memo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { registerAction, confirmRegister } from "../store/actions/authActions";
 import { useDispatch } from "react-redux";
+import { loadTodos } from "../store/actions/todoActions.js";
 
 export const Register = memo((props) => {
   // const [isFieldsOk, setIsFieldsOk] = useState(false);
@@ -50,6 +51,7 @@ export const Register = memo((props) => {
         code: register("code").value,
       })
     );
+    await dispatch(loadTodos(register("email").value))
     navigate("/dashboard");
   };
 

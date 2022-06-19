@@ -5,6 +5,7 @@ import { memo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../store/actions/authActions";
+import { loadTodos } from "../store/actions/todoActions";
 
 export const Login = memo((props) => {
   const [isFieldsOk, setIsFieldsOk] = useState(false);
@@ -36,6 +37,7 @@ export const Login = memo((props) => {
           password: register("password").value,
         })
       );
+      await dispatch(loadTodos(register("email").value))
       navigate("/dashboard");
     } catch (err) {
       alert("try again");

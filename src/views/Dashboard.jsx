@@ -1,57 +1,13 @@
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import userImg from "../assets/images/user-img.png";
 import { TodoList } from "../components/TodoList";
+// import { API } from "aws-amplify";
+// import { listTodos } from "../graphql/queries";
 
 export const Dashboard = (props) => {
-  // <Link to="/register"> register </Link>
-  const { loggedInUser } = useSelector(state => state.authModule)
-  console.log('loggedInUser',loggedInUser)
-
-
-  // console.log('hi',hi)
-  // const { loggedInUser } = useSelector(state => state.userModule)
-
-
-  const todos = [
-    {
-      id: "dfgbn",
-      title: "Learn options api",
-      subtitle: "",
-      doneAt: 1654505358000,
-    },
-    {
-      id: "4rtghn",
-      title: "Learn composition api",
-      subtitle: "",
-      doneAt: null,
-    },
-    {
-      id: "4rtgb",
-      title: "Watch video about State Management",
-      subtitle: "",
-      doneAt: 1654504358000,
-    },
-    {
-      id: "hgfd",
-      title: "Watch video about State Management Watch video about State Management",
-      subtitle: "",
-      doneAt: 1654504358000,
-    },
-    {
-      id: "tgvb",
-      title: "Make Todo App",
-      subtitle: "",
-      doneAt: null,
-    },
-    {
-      id: "5tyhjn",
-      title: "Learn Vue2",
-      subtitle: "",
-      doneAt: null,
-    },
-  ];
-
-  let userName = "shani kupiec";
+  const { loggedInUser } = useSelector((state) => state.authModule);
+  const { todos } = useSelector((state) => state.todoModule);
 
   return (
     <div className="dashboard">

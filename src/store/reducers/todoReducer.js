@@ -8,7 +8,6 @@ export function todoReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
         case 'SET_TODOS':
             return {
-                ...state,
                 todos: action.todos
             }
 
