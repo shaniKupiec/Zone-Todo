@@ -11,7 +11,7 @@ export const todoService = {
 
 async function query(loggedInUserEmail) {
   try {
-    console.log('loggedInUserEmail',loggedInUserEmail)
+    console.log("loggedInUserEmail", loggedInUserEmail);
     const filter = {
       userEmail: {
         eq: loggedInUserEmail,
@@ -27,16 +27,21 @@ async function query(loggedInUserEmail) {
 
 async function add(todoData) {
   try {
-    await API.graphql({ query: createTodo, variables: { input: todoData } })
+    await API.graphql({ query: createTodo, variables: { input: todoData } });
   } catch (error) {
     console.log("error add todo", error);
     throw error;
   }
 }
 
-async function update(todoData) {
+async function update({ todo }) {
   try {
-    await API.graphql({ query: updateTodo, variables: { input: todoData } })
+    delete todo.createdAt
+    delete todo.updatedAt
+    delete todo._deleted
+    delete todo._lastChangedAt
+    console.log("todo", todo);
+    await API.graphql({ query: updateTodo, variables: { input: todo } });
   } catch (error) {
     console.log("error update todo", error);
     throw error;
@@ -45,7 +50,7 @@ async function update(todoData) {
 
 async function remove(todoId) {
   try {
-    await API.graphql({ query: deleteTodo, variables: { input: { todoId } }});
+    await API.graphql({ query: deleteTodo, variables: { input: { todoId } } });
   } catch (error) {
     console.log("error delete todo", error);
     throw error;
