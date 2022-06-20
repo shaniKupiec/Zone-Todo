@@ -1,30 +1,19 @@
-import { useState } from "react";
 import illus1 from "../assets/images/illustration1.png";
 import { useFormRegister } from "../hooks/useFormRegister.js";
-import { memo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../store/actions/authActions";
 import { loadTodos } from "../store/actions/todoActions";
 
-export const Login = memo((props) => {
-  const [isFieldsOk, setIsFieldsOk] = useState(false);
+export const Login = (props) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  // const checkValidations = useCallback(({ username, password }) => {
-  //   if (username.trim().split(" ").length >= 2 && password !== "") {
-  //     setIsFieldsOk({ isFieldsOk: true });
-  //   }
-  //   // console.log('isFieldsOk',isFieldsOk)
-  // }, []);
 
   const [register] = useFormRegister(
     {
       username: "",
       password: "",
     },
-    // checkValidations
   );
 
   const handleSubmit = async (ev) => {
@@ -58,4 +47,4 @@ export const Login = memo((props) => {
       </footer>
     </section>
   );
-});
+};

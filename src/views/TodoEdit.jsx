@@ -18,10 +18,8 @@ export const TodoEdit = (props) => {
 
   const loadTodo = async () => {
     const id = params.id;
-    // console.log("id", id);
     if (id) {
       const todo = todos.find((t) => t.id === id);
-      // console.log("todo", todo);
       setTodo(todo);
     } else {
       setTodo({

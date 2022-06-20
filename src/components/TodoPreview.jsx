@@ -19,6 +19,7 @@ export const TodoPreview = ({ todo }) => {
   let className = "todo__checkbox";
   className += todo.doneAt ? " full" : "";
 
+  if (!todo) return <div>Loading...</div>;
   return (
     <section className="todo" onClick={toggleTodo}>
       <div className={className}></div>

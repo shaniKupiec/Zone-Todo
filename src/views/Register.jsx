@@ -1,33 +1,22 @@
 import { useState } from "react";
 import { useFormRegister } from "../hooks/useFormRegister.js";
-import { memo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { registerAction, confirmRegister } from "../store/actions/authActions";
 import { useDispatch } from "react-redux";
 import { loadTodos } from "../store/actions/todoActions.js";
 
-export const Register = memo((props) => {
+export const Register = (props) => {
   const [isRegister, setIsRegister] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // const checkValidations = useCallback(({ fullName, password }) => {
-  //   if (fullName.trim().split(" ").length >= 2 && password !== "") {
-  //     setIsFieldsOk({ isFieldsOk: true });
-  //   }
-  //   // console.log('isFieldsOk',isFieldsOk)
-  // }, []);
-
-  const [register] = useFormRegister(
-    {
-      name: "",
-      email: "",
-      phone: "",
-      password: "",
-      code: "",
-    }
-    // checkValidations
-  );
+  const [register] = useFormRegister({
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
+    code: "",
+  });
 
   const submitRegister = async (ev) => {
     ev.preventDefault();
@@ -38,7 +27,7 @@ export const Register = memo((props) => {
         password: register("password").value,
       })
     );
-    setIsRegister(current => !current);
+    setIsRegister((current) => !current);
   };
 
   const submitConfirm = async (ev) => {
@@ -50,7 +39,7 @@ export const Register = memo((props) => {
         code: register("code").value,
       })
     );
-    await dispatch(loadTodos(register("email").value))
+    await dispatch(loadTodos(register("email").value));
     navigate("/dashboard");
   };
 
@@ -78,4 +67,4 @@ export const Register = memo((props) => {
       </footer>
     </section>
   );
-});
+};

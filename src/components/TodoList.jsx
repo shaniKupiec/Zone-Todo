@@ -9,6 +9,7 @@ export const TodoList = ({ todos }) => {
     navigate("/todo/edit");
   };
 
+  if (!todos) return <div>Loading...</div>;
   return (
     <section className="todo-list">
       <header className="todo-list__header">
