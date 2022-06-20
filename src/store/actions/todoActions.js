@@ -27,12 +27,11 @@ export function editTodo(todo) {
   };
 }
 
-export function removeTodo(todoId) {
+export function removeTodo(todo) {
   return async (dispatch) => {
     try {
-      console.log('todoId',todoId)
-      await todoService.remove(todoId);
-      dispatch({ type: "REMOVE_TODO", todoId });
+      await todoService.remove(todo);
+      dispatch({ type: "REMOVE_TODO", todoId: todo.id });
     } catch (err) {
       console.log("err:", err);
     }

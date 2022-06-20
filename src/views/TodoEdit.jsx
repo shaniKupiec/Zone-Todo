@@ -32,7 +32,7 @@ export const TodoEdit = (props) => {
   };
 
   const onRemove = async () => {
-    await dispatch(removeTodo(todo.id))
+    await dispatch(removeTodo(todo))
     navigate("/dashboard");
   };
 

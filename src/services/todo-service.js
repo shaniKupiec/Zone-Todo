@@ -35,10 +35,10 @@ async function add(todoData) {
 
 async function update(todo) {
   try {
-    delete todo.createdAt
-    delete todo.updatedAt
-    delete todo._deleted
-    delete todo._lastChangedAt
+    delete todo.createdAt;
+    delete todo.updatedAt;
+    delete todo._deleted;
+    delete todo._lastChangedAt;
     console.log("todo", todo);
     await API.graphql({ query: updateTodo, variables: { input: todo } });
   } catch (error) {
@@ -47,10 +47,14 @@ async function update(todo) {
   }
 }
 
-async function remove(todoId) {
+async function remove(todo) {
   try {
-    console.log('todoId',todoId)
-    await API.graphql({ query: deleteTodo, variables: { input: { id: todoId } } });
+    const todoData = {
+      id: todo.id,
+      _version: todo._version,
+    };
+    console.log("todoData", todoData);
+    await API.graphql({ query: deleteTodo, variables: { input: todoData } });
   } catch (error) {
     console.log("error delete todo", error);
     throw error;
