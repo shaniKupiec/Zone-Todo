@@ -45,8 +45,10 @@ export const TodoEdit = (props) => {
   };
 
   if (!todo) return <div>Loading...</div>;
+  const todoTitle = todo.id ? 'edit' : 'add'
   return (
     <section className="edit">
+      <div className="edit__title">{todoTitle} todo</div>
       <form onSubmit={onSaveTodo} className="edit__form">
         <input type="text" autoFocus onChange={handleChange} value={todo.title} name="title" placeholder="Enter Todo Title" required />
         <input type="text" onChange={handleChange} value={todo.subtitle} name="subtitle" placeholder="Enter Todo Subtitle" />

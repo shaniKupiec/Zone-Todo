@@ -1,7 +1,6 @@
-// import { Navigate } from "react-router-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./assets/styles/Global.scss";
-import { AppHeader } from "./components/AppHeader";
+import shape from './assets/images/shape.png'
 import { Home } from "./views/Home";
 import { Register } from "./views/Register";
 import { Login } from "./views/Login";
@@ -12,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app">
-        <AppHeader />
+        <img src={shape} alt="" className="app__header" />
         <main className="app__main">
           <Routes>
             <Route path="/todo/edit/:id" element={<TodoEdit />} />

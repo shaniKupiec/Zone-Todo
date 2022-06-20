@@ -39,33 +39,20 @@ input {
   cursor: pointer;
 }
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
 .app {
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  &__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 150px;
+  }
   &__main {
-    padding: 26px;
-    position: absolute;
-    bottom: 0;
+    padding: 0 26px;
     width: 100%;
+    text-align: center;
   }
 }
-
-// nav {
-//     padding: 30px;
-
-//     a {
-//         font-weight: bold;
-//         color: #2c3e50;
-
-//         &.router-link-exact-active {
-//             color: #42b983;
-//         }
-//     }
-// }
