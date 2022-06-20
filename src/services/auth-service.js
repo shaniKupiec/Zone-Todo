@@ -64,7 +64,6 @@ async function resendConfirmationCode(username) {
 
 async function logout() {
   try {
-    // possible to add global option - logout from all users from all devices.
     await Auth.signOut();
   } catch (error) {
     console.log("error logout out: ", error);

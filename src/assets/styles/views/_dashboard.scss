@@ -12,11 +12,6 @@
         top: 0;
         height: 267px;
 
-        &__block{
-            // width: 100vw;
-            // height: 40%;
-        }
-
         &__user-img {
             width: 114px;
 
@@ -26,12 +21,20 @@
             font-size: rem(18px);
             color: $pClr4;
             text-transform: capitalize;
-
         }
     }
 
     &__main{
         position: absolute;
         top: calc(267px);
+        & > section {
+            background-color: $pClr4;
+            box-shadow: 0px 5px 6px -6px #000000;
+            border-radius: 10px;
+            padding: 20px;
+            max-height: calc(100vh - 315px);
+            overflow: scroll;
+            margin: 30px 0;
+        }
     }
 }
