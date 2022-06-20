@@ -24,9 +24,11 @@ async function query(loggedInUserEmail) {
   }
 }
 
-async function add(todoData) {
+async function add(todo) {
   try {
-    await API.graphql({ query: createTodo, variables: { input: todoData } });
+    // console.log('todo',todo)
+    const ans = await API.graphql({ query: createTodo, variables: { input: todo } });
+    return ans.data.createTodo
   } catch (error) {
     console.log("error add todo", error);
     throw error;

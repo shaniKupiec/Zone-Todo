@@ -7,7 +7,7 @@ export const TodoList = ({ todos }) => {
   const navigate = useNavigate();
 
   const addTodo = () => {
-    navigate("/todo/edit/");
+    navigate("/todo/edit");
   };
 
   return (

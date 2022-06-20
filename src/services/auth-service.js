@@ -11,9 +11,7 @@ async function login(username, password) {
   try {
     // const username = "shani.kupiec@gmail.com";
     // const password = "1234567JKYh!";
-
     const user = await Auth.signIn(username, password);
-    console.log("user", user);
     return user;
   } catch (error) {
     console.log("error login in", error);
@@ -38,11 +36,6 @@ async function register(userToSave) {
         name: userToSave.name,
       },
     });
-    // const newUser = {
-    //   keyPrefix: data.keyPrefix,
-    //   userDataKey: data.userDataKey,
-    //   username: data.username,
-    // };
     console.log(user);
     return user;
   } catch (error) {
@@ -53,8 +46,6 @@ async function register(userToSave) {
 
 async function confirmRegister(username, code) {
   try {
-    console.log("username", username);
-    console.log("code", code);
     await Auth.confirmSignUp(username, code);
   } catch (error) {
     console.log("error confirming sign up", error);
@@ -65,7 +56,6 @@ async function confirmRegister(username, code) {
 async function resendConfirmationCode(username) {
   try {
     await Auth.resendSignUp(username);
-    console.log("code resent successfully");
   } catch (error) {
     console.log("error resending code: ", error);
     throw error;
