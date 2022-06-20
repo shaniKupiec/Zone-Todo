@@ -1,9 +1,6 @@
-import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import userImg from "../assets/images/user-img.png";
 import { TodoList } from "../components/TodoList";
-// import { API } from "aws-amplify";
-// import { listTodos } from "../graphql/queries";
 
 export const Dashboard = (props) => {
   const { loggedInUser } = useSelector((state) => state.authModule);

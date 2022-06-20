@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { useFormRegister } from "../hooks/useFormRegister.js";
 import { memo } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { loadTodos } from "../store/actions/todoActions.js";
 
 export const Register = memo((props) => {
-  // const [isFieldsOk, setIsFieldsOk] = useState(false);
   const [isRegister, setIsRegister] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();

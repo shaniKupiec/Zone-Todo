@@ -15,6 +15,7 @@ export function todoReducer(state = INITIAL_STATE, action) {
       };
 
     case "UPDATE_TODO":
+      console.log('update todo in reducer');
       return {
         todos: state.todos.map((todo) => (todo.id === action.todo.id ? action.todo : todo)),
       };

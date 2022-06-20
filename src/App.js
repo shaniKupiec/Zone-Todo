@@ -22,7 +22,7 @@ function App() {
         <main className="app__main">
           <Routes>
             {/* <PrivateRoute path="/dashboard" element={<Dashboard />} /> */}
-            <Route path="/editTodo" element={<TodoEdit />} />
+            <Route path="/todo/edit/:id" element={<TodoEdit />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />

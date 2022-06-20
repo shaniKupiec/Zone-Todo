@@ -25,4 +25,13 @@
             font-size: rem(12px);
         }
     }
+    &__edit {
+        @include btn();
+        border: 1px solid $pClr1;
+        color: $pClr1;
+
+        padding: rem(2px);
+        width: rem(50px);
+        background-color: $sClr2;
+    }
 }

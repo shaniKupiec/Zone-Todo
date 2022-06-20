@@ -15,11 +15,11 @@ export function editTodo(todo) {
   return async (dispatch) => {
     try {
       if (todo.id) {
-        const newTodo = await todoService.add(todo);
-        dispatch({ type: "ADD_TODO", todo: newTodo });
-      } else {
         await todoService.update(todo);
         dispatch({ type: "UPDATE_TODO", todo });
+      } else {
+        const newTodo = await todoService.add(todo);
+        dispatch({ type: "ADD_TODO", todo: newTodo });
       }
     } catch (err) {
       console.log("err:", err);
@@ -30,6 +30,7 @@ export function editTodo(todo) {
 export function removeTodo(todoId) {
   return async (dispatch) => {
     try {
+      console.log('todoId',todoId)
       await todoService.remove(todoId);
       dispatch({ type: "REMOVE_TODO", todoId });
     } catch (err) {
