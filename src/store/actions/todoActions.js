@@ -3,7 +3,6 @@ import { todoService } from "../../services/todo-service";
 export function loadTodos(loggedInUserEmail) {
   return async (dispatch) => {
     try {
-      console.log('loggedInUserEmail',loggedInUserEmail)
       const todos = await todoService.query(loggedInUserEmail);
       dispatch({ type: "SET_TODOS", todos });
     } catch (err) {
@@ -19,7 +18,6 @@ export function editTodo(todo) {
         await todoService.update(todo);
         dispatch({ type: "UPDATE_TODO", todo });
       } else {
-        // console.log('todo add!',todo)
         const newTodo = await todoService.add(todo);
         dispatch({ type: "ADD_TODO", todo: newTodo });
       }

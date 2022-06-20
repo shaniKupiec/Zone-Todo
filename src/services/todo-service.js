@@ -16,7 +16,6 @@ async function query(loggedInUserEmail) {
         eq: loggedInUserEmail,
       },
     };
-    console.log('loggedInUserEmail',loggedInUserEmail)
     const apiData = await API.graphql({ query: listTodos, variables: { filter: filter } });
     return apiData.data.listTodos.items;
   } catch (error) {
@@ -27,7 +26,6 @@ async function query(loggedInUserEmail) {
 
 async function add(todo) {
   try {
-    // console.log('todo',todo)
     const ans = await API.graphql({ query: createTodo, variables: { input: todo } });
     return ans.data.createTodo
   } catch (error) {
@@ -42,7 +40,6 @@ async function update(todo) {
     delete todo.updatedAt;
     delete todo._deleted;
     delete todo._lastChangedAt;
-    console.log("todo", todo);
     await API.graphql({ query: updateTodo, variables: { input: todo } });
   } catch (error) {
     console.log("error update todo", error);
@@ -56,7 +53,6 @@ async function remove(todo) {
       id: todo.id,
       _version: todo._version,
     };
-    console.log("todoData", todoData);
     await API.graphql({ query: deleteTodo, variables: { input: todoData } });
   } catch (error) {
     console.log("error delete todo", error);

@@ -17,7 +17,6 @@ export const Dashboard = (props) => {
     navigate("/");
   };
 
-  console.log('loggedInUser',loggedInUser)
   if(!loggedInUser) return <div>Loading...</div>
   return (
     <div className="dashboard">

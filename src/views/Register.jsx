@@ -20,7 +20,6 @@ export const Register = (props) => {
 
   const submitRegister = async (ev) => {
     ev.preventDefault();
-    console.log("submit!");
     await dispatch(
       registerAction({
         name: register("name").value,
@@ -34,7 +33,6 @@ export const Register = (props) => {
 
   const submitConfirm = async (ev) => {
     ev.preventDefault();
-    console.log("confirm!");
     await dispatch(
       confirmRegister({
         username: register("email").value,

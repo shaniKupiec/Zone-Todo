@@ -28,7 +28,6 @@ async function register(userToSave) {
         name: userToSave.name,
       },
     });
-    console.log(user);
     return user;
   } catch (error) {
     console.log("error register up:", error);

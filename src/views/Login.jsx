@@ -19,7 +19,6 @@ export const Login = (props) => {
   const handleSubmit = async (ev) => {
     try {
       ev.preventDefault();
-      console.log("submit!");
       await dispatch(
         login({
           username: register("username").value,
