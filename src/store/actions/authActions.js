@@ -16,6 +16,13 @@ export function registerAction(user) {
   return async (dispatch) => {
     try {
       const userForStore = await authService.register(user);
+      userForStore.attributes = {
+        name: user.name,
+        username: user.email,
+        email: user.email,
+        phone: user.phone,
+        password: user.password,
+      };
       dispatch({ type: "SET_LOGGED_IN_USER", user: userForStore });
     } catch (error) {
       console.log("error:", error);

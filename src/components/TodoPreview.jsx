@@ -19,13 +19,16 @@ export const TodoPreview = ({ todo }) => {
   let className = "todo__checkbox";
   className += todo.doneAt ? " full" : "";
 
+  var options = { weekday: "long", hour: "2-digit", month: "long", day: "numeric" };
+  const formattedDate = new Date(todo.doneAt).toLocaleDateString("en-US", options)
+
   if (!todo) return <div>Loading...</div>;
   return (
     <section className="todo" onClick={toggleTodo}>
       <div className={className}></div>
       <div className="todo__text">
         <span className="todo__text__title"> {todo.title}</span>
-        {todo.doneAt !== 0 && <span className="todo__text__doneAt">{todo.doneAt}</span>}
+        {todo.doneAt !== 0 && <span className="todo__text__doneAt">{formattedDate}</span>}
       </div>
       <button className="todo__edit" onClick={onEditTodo}>
         {" "}

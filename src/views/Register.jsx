@@ -23,7 +23,9 @@ export const Register = (props) => {
     console.log("submit!");
     await dispatch(
       registerAction({
-        username: register("username").value,
+        name: register("name").value,
+        email: register("email").value,
+        phone: register("phone").value,
         password: register("password").value,
       })
     );
@@ -49,16 +51,16 @@ export const Register = (props) => {
       <div className="register__description">Let’s help ypu to meet your Todo!</div>
       {isRegister && (
         <form onSubmit={submitRegister} className="register__form">
-          <input type="text" {...register("name")} placeholder="Enter Your Full Name" required />
+          <input type="text" autoFocus {...register("name")} placeholder="Enter Your Full Name" required />
           <input type="email" {...register("email")} placeholder="Enter Your Email" required />
-          <input type="phone" {...register("phone")} placeholder="Enter Your Phone" required />
+          <input type="phone" {...register("phone")} placeholder="Enter Your Phone +972..." required />
           <input type="password" {...register("password")} placeholder="Enter Your Password" required />
           <button className="register__form__submit">register</button>
         </form>
       )}
       {!isRegister && (
         <form onSubmit={submitConfirm} className="register__form">
-          <input type="text" {...register("code")} placeholder="Enter Your Confirmation Code" required />
+          <input type="text" autoFocus {...register("code")} placeholder="Enter Your Confirmation Code" required />
           <button className="register__form__submit">register</button>
         </form>
       )}

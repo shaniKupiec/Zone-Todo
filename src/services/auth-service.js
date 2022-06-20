@@ -9,8 +9,6 @@ export const authService = {
 
 async function login(username, password) {
   try {
-    // const username = "shani.kupiec@gmail.com";
-    // const password = "1234567JKYh!";
     const user = await Auth.signIn(username, password);
     return user;
   } catch (error) {
@@ -21,12 +19,6 @@ async function login(username, password) {
 
 async function register(userToSave) {
   try {
-    // const userToSave = {
-    //   name: "Guest",
-    //   password: "1234567JKYh!",
-    //   email: "shani.kupiec@gmail.com",
-    //   phone: "+972544268251",
-    // };
     const { user } = await Auth.signUp({
       username: userToSave.email,
       password: userToSave.password,

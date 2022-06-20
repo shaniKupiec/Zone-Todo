@@ -16,6 +16,7 @@ async function query(loggedInUserEmail) {
         eq: loggedInUserEmail,
       },
     };
+    console.log('loggedInUserEmail',loggedInUserEmail)
     const apiData = await API.graphql({ query: listTodos, variables: { filter: filter } });
     return apiData.data.listTodos.items;
   } catch (error) {

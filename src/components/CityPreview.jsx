@@ -1,5 +1,5 @@
 export const CityPreview = ({ city }) => {
-  console.log("city", city);
+  // console.log("city", city);
   if (!city) return <div>loading...</div>;
   return (
     <section className="city">

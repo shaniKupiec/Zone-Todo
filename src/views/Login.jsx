@@ -26,7 +26,7 @@ export const Login = (props) => {
           password: register("password").value,
         })
       );
-      await dispatch(loadTodos(register("email").value))
+      await dispatch(loadTodos(register("username").value))
       navigate("/dashboard");
     } catch (err) {
       alert("try again");
@@ -38,8 +38,8 @@ export const Login = (props) => {
       <div className="login__title">welcome back</div>
       <img src={illus1} alt="" className="login__illustration" />
       <form onSubmit={handleSubmit} className="login__form">
-        <input type="email" {...register("username")} placeholder="Enter Your Email" required />
-        <input type="text" {...register("password")} placeholder="Enter Your Password" required />
+        <input type="email" autoFocus {...register("username")} placeholder="Enter Your Email" required />
+        <input type="password" {...register("password")} placeholder="Enter Your Password" required />
         <button className="login__form__submit">login</button>
       </form>
       <footer className="login__footer">

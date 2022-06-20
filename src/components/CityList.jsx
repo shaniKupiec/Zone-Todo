@@ -43,7 +43,7 @@ export const CityList = ({ cities }) => {
         ))}
       </ul>
       <form onSubmit={onSearch} className="city-list__form">
-        <input type="text" autoFocus onChange={handleChange} value={newCity.name} name="name" placeholder="Enter City Name" required/>
+        <input type="text" onChange={handleChange} value={newCity.name} name="name" placeholder="Enter City Name" required/>
         <button className="city-list__form__submit">show weather</button>
       </form>
     </section>

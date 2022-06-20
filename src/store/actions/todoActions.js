@@ -3,6 +3,7 @@ import { todoService } from "../../services/todo-service";
 export function loadTodos(loggedInUserEmail) {
   return async (dispatch) => {
     try {
+      console.log('loggedInUserEmail',loggedInUserEmail)
       const todos = await todoService.query(loggedInUserEmail);
       dispatch({ type: "SET_TODOS", todos });
     } catch (err) {
