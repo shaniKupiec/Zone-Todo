@@ -46,7 +46,7 @@ export const TodoEdit = (props) => {
       <form onSubmit={onSaveTodo} className="edit__form">
         <input type="text" ref={inputRef} onChange={handleChange} value={todo.title} name="title" placeholder="Enter Todo Title" required />
         <input type="text" onChange={handleChange} value={todo.subtitle} name="subtitle" placeholder="Enter Todo Subtitle" />
-        <input type="checkbox" onChange={handleChange} value={todo.isDone} name="isDone"/>
+        <input type="checkbox" onChange={handleChange} value={todo.doneAt} name="doneAt" defaultChecked={todo.doneAt}/>
         <button className="edit__form__submit">save</button>
         <div onClick={onRemove}>delete</div>
       </form>
