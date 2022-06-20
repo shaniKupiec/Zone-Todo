@@ -4,6 +4,7 @@ import { TodoList } from "../components/TodoList";
 import { useDispatch } from "react-redux";
 import { logout } from "../store/actions/authActions";
 import { useNavigate } from "react-router-dom";
+import { CityList } from "../components/CityList";
 
 export const Dashboard = (props) => {
   const { loggedInUser } = useSelector((state) => state.authModule);
@@ -11,10 +12,10 @@ export const Dashboard = (props) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const onLogout = async() => {
+  const onLogout = async () => {
     await dispatch(logout);
     navigate("/");
-  }
+  };
 
   return (
     <div className="dashboard">
@@ -25,11 +26,9 @@ export const Dashboard = (props) => {
       </header>
       <main className="dashboard__main">
         <TodoList todos={todos} />
-        <section>
-          wether app
-        </section>
+        <CityList />
         <section onClick={onLogout}>
-          logout
+          <button className="dashboard__main__btn">logout</button>
         </section>
       </main>
     </div>
