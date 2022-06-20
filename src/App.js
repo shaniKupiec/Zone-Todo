@@ -15,6 +15,7 @@ function App() {
         <AppHeader />
         <main className="app__main">
           <Routes>
+            <Route path="/todo/edit/:id" element={<TodoEdit />} />
             <Route path="/todo/edit" element={<TodoEdit />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/login" element={<Login />} />

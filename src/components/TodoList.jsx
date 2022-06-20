@@ -1,4 +1,3 @@
-import { useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { TodoPreview } from "./TodoPreview";
 import plusImg from "../assets/images/plus-button.png";

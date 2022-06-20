@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import illus2 from '../assets/images/illustration2.png'
 import { useDispatch } from "react-redux";

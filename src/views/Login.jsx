@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import illus1 from "../assets/images/illustration1.png";
 import { useFormRegister } from "../hooks/useFormRegister.js";
 import { memo } from "react";
