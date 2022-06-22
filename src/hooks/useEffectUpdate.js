@@ -9,7 +9,5 @@ export const useEffectUpdate = (cb, dependencies) => {
             return
         }
         cb()
-        
-        // eslint-disable-next-line
     }, dependencies)
 }
