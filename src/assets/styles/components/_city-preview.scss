@@ -1,19 +1,20 @@
-.city{
-    @include flex(column);
-    width: rem(100px);
-    padding: rem(10px);
-    &__img{
-        
+.city {
+    @include flex();
+    padding: rem(20px);
+    &__img {
+        width: rem(70px);
     }
-    &__deg{
-        font-family: poppins-semiBold;
-        font-size: rem(20px);
-    }
-    &__name{
-        
-    }
-    &__desc{
-        font-size: rem(14px);
-        color: $pClr3;
+
+    &__info {
+        &__deg {
+            font-family: poppins-semiBold;
+            font-size: rem(20px);
+        }
+        &__name {
+        }
+        &__desc {
+            font-size: rem(14px);
+            color: $pClr3;
+        }
     }
 }

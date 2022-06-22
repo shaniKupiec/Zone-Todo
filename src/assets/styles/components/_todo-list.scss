@@ -2,6 +2,7 @@
     &__header {
         @include flex(row, space-between);
         width: 80vw;
+        margin-bottom: 15px;
         &__title {
             font-size: rem(18px);
             font-family: poppins-medium;

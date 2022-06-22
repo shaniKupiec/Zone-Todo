@@ -22,6 +22,7 @@ export const CityList = ({ cities }) => {
       .then((response) => response.json())
       .then((newData) => {
         setData((previewsData) => [...previewsData, newData]);
+        console.log('newData',newData)
       });
   };
 

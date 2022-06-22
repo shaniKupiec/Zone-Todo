@@ -6,7 +6,6 @@ export const useForm = (initialState, cb = () => {}) => {
 
   useEffectUpdate(() => {
     cb(fields);
-    // console.log('fields',fields)
   }, [fields]);
 
   const handleChange = ({ target }) => {
