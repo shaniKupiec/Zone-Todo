@@ -44,7 +44,6 @@ export const TodoEdit = (props) => {
   };
 
   const tryCity = async (fields) => {
-    console.log("fields", fields);
     const key = "3b8466b956eb07b8b00cdb1acba5895b";
     await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${fields.title}&appid=${key}`)
       .then((response) => response.json())

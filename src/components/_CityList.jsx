@@ -22,7 +22,6 @@ export const CityList = ({ cities }) => {
       .then((response) => response.json())
       .then((newData) => {
         setData((previewsData) => [...previewsData, newData]);
-        console.log('newData',newData)
       });
   };
 
@@ -50,24 +49,3 @@ export const CityList = ({ cities }) => {
     </section>
   );
 };
-
-// const loadData = async () => {
-//   await fetch("http://api.weatherstack.com/current?access_key=66fa984041b84d84d5794b8288e75386&query=New%20York")
-//     .then((response) => response.json())
-//     .then((newData) => {
-//       console.log(data);
-//       setData(previewsData => [...previewsData, newData]);
-//     });
-//   await fetch("http://api.weatherstack.com/current?access_key=66fa984041b84d84d5794b8288e75386&query=New%20York")
-//     .then((response) => response.json())
-//     .then((newData) => {
-//       console.log(data);
-//       setData(previewsData => [...previewsData, newData]);
-//     });
-//   await fetch("http://api.weatherstack.com/current?access_key=66fa984041b84d84d5794b8288e75386&query=New%20York")
-//     .then((response) => response.json())
-//     .then((newData) => {
-//       console.log(data);
-//       setData(previewsData => [...previewsData, newData]);
-//     });
-// };
