@@ -1,6 +1,6 @@
 # Zone Todo
 
-Zone Todo is a mobile app that allows you to manage your daily tasks.
+Zone Todo is a mobile design app that allows you to manage your daily tasks.
 
 ## Tech
 - React.js
@@ -9,9 +9,9 @@ Zone Todo is a mobile app that allows you to manage your daily tasks.
 - AWS Services: AppSync, Cognito, Amplify, DynamoDB
 
 ## Features
-- login, register and logout
-- create, update and delete a task
-- check weather by city name
+- Login, register and logout
+- Task CRUD
+- When where is a city name in a Todo- it displays the weather in that city
 
 
 ## Installation
