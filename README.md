@@ -2,6 +2,8 @@
 
 Zone Todo is a mobile design app that allows you to manage your daily tasks.
 
+![image not found](https://res.cloudinary.com/trellox/image/upload/v1657785930/github%20-%20readme/task_luba5j.jpg)
+
 ## Tech
 - React.js
 - Redux
